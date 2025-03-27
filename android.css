@@ -1,0 +1,38 @@
+.outer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+.container {
+    width: 750px;
+}
+.antena1 {
+    display: flex;
+    justify-content:space-around;
+}
+.antena2 {
+    display: flex;
+    justify-content:space-evenly;
+}
+.kepala,.badan,.kaki {
+    display: flex;
+    justify-content: center;
+}
+.items {
+    background-color: #82bc01;
+    width: 50px;
+    height: 50px;
+}
+.items-white {
+    background-color: #ffffff;
+    width: 50px;
+    height: 50px;
+}
+
+body>p {
+    text-align:center;
+}
+
+.items>span, .items-white>span {
+    visibility:hidden;
+}

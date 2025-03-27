@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .container {
+                height: 100%;
+                display: grid;
+                grid-template-columns: 200px auto;
+                grid-template-rows: 1fr 9fr;
+                grid-template-areas:
+                "sidebar head"
+                "sidebar main";
+            }
+            .sidebar {
+                text-align: center;
+                grid-area: sidebar;
+                background-color: #343a40;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+            }
+            .sidebar>div>a {
+                text-decoration: none;
+                text-align: left;
+                display: block;
+                /* margin-left: 20px; */
+                padding: 10px;
+                width: 87%;
+                border-radius: 4px;
+            }
+            .sidebar>div>a:hover {
+                background: #59636d;
+            }
+            .header {
+                color: white;
+                grid-area: head;
+                background-color: #007bff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .main-content {
+                grid-area: main;
+                display:flex;
+                flex-direction: column;
+            }
+            .card-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-left: 30px;
+                gap: 20px;
+                margin-right: 15px;
+            }
+            .card {
+                padding: 20px;
+                box-shadow:0px 1px 4px gray;
+            }
+            .card>p {
+                color: #007bff;
+                font-weight: bold;
+            }
+            .logout-button {
+                background-color: rgb(228, 23, 33);
+                padding: 8px;
+                border-radius: 7px;
+                color: white;
+                text-decoration: none;
+                display: inline-block;
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                .sidebar {
+                    display: none;
+                }
+                .container {
+                    grid-template-columns: auto;
+                    grid-template-areas:
+                    "head"
+                    "main";
+                }
+                .card-container {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media only screen and (min-width:600px) and (max-width: 768px) {
+                .card-container {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+
+            @media only screen and (max-width: 425px) {
+                .card-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- sidebar -->
+            <div class="sidebar">
+                <div style="color: white; padding: 20px;">
+                    <h2>Information System</h2>
+                    <a href="" style="color: white;">Dashboard</a>
+                    <a href="" style="color: white;">Laporan</a>
+                    <a href="" style="color: white;">Pengguna</a>
+                    <a href="" style="color: white;">Pengaturan</a>
+                </div>
+                <a href="" class="logout-button">Logout</a>
+            </div>
+
+            <!-- header -->
+            <div class="header">
+                <h3 style="margin-left: 12px;">Dashboard</h3>
+                <div>
+                    <span style="vertical-align: super;">Admin</span>
+                    <img src="img/user.png" style="width: 30px; margin-right: 10px;">
+                </div>
+            </div>
+
+            <!-- konten dashboard -->
+            <div class="main-content">
+                <h3 style="margin-left: 30px;">Ringkasan</h3>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Total Pengguna</h3>
+                        <p>1,257</p>
+                    </div>
+                    <div class="card">
+                        <h3>Penjualan Bulan Ini</h3>
+                        <p>Rp 150,151,152</p>
+                    </div>
+                    <div class="card">
+                        <h3>Tiket Support</h3>
+                        <p>24</p>
+                    </div>
+                    <div class="card">
+                        <h3>Feedback</h3>
+                        <p>320</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
